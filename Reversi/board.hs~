@@ -1,0 +1,11 @@
+module Board (hacer división de módulos)
+
+showB [] = ""
+showB (a:bs) = (show a)++"\n"++(showB bs)
+ 
+showBoard pos = putStr (" _ _ _ _ _ _ _ _ \n"
+                ++[xchange x|x<-(showB (part8 pos))])
+
+xchange x | x==',' = '|' 
+          | x=='E' = '_'
+          | otherwise = x
